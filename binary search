@@ -1,0 +1,30 @@
+list=[]
+n = int(input("Enter the no of account id's"))
+for i in range(0,n):
+    ele = int(input("enter account id:"))
+    list.append(ele)
+print(list) 
+
+flag = False
+
+list2 = sorted(list)
+print("sorted list is:",list2)
+AC_id=int(input("\n\nEnter account ID to be searched:"))
+left = 0
+right = len(list2)-1
+
+while left<=right:
+    mid =(left+right)//2
+
+    if(list2[mid]==AC_id):
+      flag = True
+      print(AC_id,"is found at index",mid)
+      break
+    elif(list2 [mid]> AC_id):
+       right = mid-1
+    elif(list2 [mid]< AC_id):   
+       left = mid+1
+
+if flag == False:
+   print(AC_id,"is not found")
+    
